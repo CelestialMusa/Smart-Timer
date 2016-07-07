@@ -8,6 +8,33 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="51*"/>
+            <ColumnDefinition Width="632*"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="gridTimer" Grid.Column="1" HorizontalAlignment="Left" Height="464" Margin="619,294,0,0" VerticalAlignment="Top" Width="607" Tapped="Grid_Tapped" PointerEntered="Grid_PointerEntered">
+            <Border Margin="163,36,221,356">
+                <Grid>
+                    <TextBlock x:Name="hours" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Height="72" Width="71" FontSize="36">
+                    	<Run Text="00"/>
+                    	<Run Text=" :"/>
+                    </TextBlock>
+                    <TextBlock x:Name="minutes" HorizontalAlignment="Left" Margin="76,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="72" Width="71" FontSize="36">
+                    	<Run Text="00"/>
+                    	<Run Text=" :"/>
+                    </TextBlock>
+                    <TextBlock x:Name="seconds" HorizontalAlignment="Left" Margin="152,0,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Center" Height="72" Width="71" FontSize="36" RenderTransformOrigin="3.094,0.673"/>
+                </Grid>
+            </Border>
+            <Button x:Name="btnStart" Content="Start " HorizontalAlignment="Left" Margin="103,195,0,0" VerticalAlignment="Top" Height="66" Width="132" Click="button_Click_1"/>
+            <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="303,195,0,0" VerticalAlignment="Top" Height="66" Width="132" Click="btnStop_Click"/>
+        </Grid>
+        <TextBlock x:Name="textBlock1" Grid.Column="1" HorizontalAlignment="Left" Margin="144,108,0,0" TextWrapping="Wrap" Text="Set Hours :" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock x:Name="textBlock1_Copy" Grid.Column="1" HorizontalAlignment="Left" Margin="122,187,0,0" TextWrapping="Wrap" Text="Set Minutes :" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock x:Name="textBlock1_Copy1" Grid.Column="1" HorizontalAlignment="Left" Margin="119,272,0,0" TextWrapping="Wrap" Text="Set Seconds : " VerticalAlignment="Top" FontSize="24" SelectionChanged="textBlock1_Copy1_SelectionChanged"/>
+        <TextBox x:Name="txtHours" HorizontalAlignment="Left" Margin="275,100,0,0" Text="" VerticalAlignment="Top" Height="49" RenderTransformOrigin="0.5,0.5" Width="197" FontSize="22" TextAlignment="Center" TextChanged="textBox_TextChanged" TextWrapping="Wrap" Grid.Column="1"/>
+        <TextBox x:Name="txtMinutes" HorizontalAlignment="Left" Margin="275,175,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Height="50" RenderTransformOrigin="0.5,0.5" Width="197" FontSize="22" TextAlignment="Center" Grid.Column="1" TextChanged="txtMinutes_TextChanged"/>
+        <TextBox x:Name="txtSeconds" HorizontalAlignment="Left" Margin="275,259,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Height="50" RenderTransformOrigin="0.5,0.5" Width="197" FontSize="22" TextAlignment="Center" Grid.Column="1"/>
 
     </Grid>
 </Page>
