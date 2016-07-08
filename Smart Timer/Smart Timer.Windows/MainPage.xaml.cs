@@ -24,86 +24,82 @@ namespace Smart_Timer
     public sealed partial class MainPage : Page
     {
         DispatcherTimer timer = new DispatcherTimer();
-        Timer newTimer = new Timer();
+        static Timer new_timer;
 
-        int hours = 0;
-        int minutes = 0;
-        int seconds = 0;
+        static int hours = 0;
+        static int minutes = 0;
+        static int seconds = 0;
 
         public MainPage()
         {
             this.InitializeComponent();
             timer.Interval = new TimeSpan(0, 0, 0, 1, 0);
             timer.Tick += timer_Tick;
+        }
 
+        public static void setTime(Timer newTimer)
+        {
+            new_timer = newTimer;
             setTime();
         }
 
-        private void setTime()
+        private static void setTime()
         {
-            hours = newTimer.Hours;
-            minutes = newTimer.Minutes;
-            seconds = newTimer.Seconds;
+            hours = new_timer.Hours;
+            minutes = new_timer.Minutes;
+            seconds = new_timer.Seconds;
         }
 
         private void timer_Tick(object sender, object e)
-        {
+        {   
             if (seconds == 0)
             {
                 updateTime();
             }
 
-            lblSeconds.Text = seconds--.ToString(); 
+            lblHours.Text = String.Format("{0:00}", hours);
+            lblMinutes.Text = String.Format("{0:00}", minutes);
+            lblSeconds.Text = String.Format("{0:00}", seconds--);
         }
 
-        private async void button_Click_1(object sender, RoutedEventArgs e)
+        private  void button_Click_1(object sender, RoutedEventArgs e)
         {
-            MessageDialog dialog = new MessageDialog(newTimer.Hours.ToString());
-            await dialog.ShowAsync();
-
-            if (btnStart.Content.ToString() == "Start")
+            if (btnStart.Content.ToString().Trim() == "Start" && !(hours ==0 && minutes == 0 && seconds == 0))
             {
                 btnStart.Content = "Pause";
-                timer.Stop();
+                timer.Start();
             }
             else
             {
                 btnStart.Content = "Start";
-                timer.Start();
+                timer.Stop();
             }
-
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private  void updateTime()
         {
-            timer.Stop();
-            hours = 0;
-            minutes = 0;
-            seconds = 0;        
-        }
-
-        private void updateTime()
-        {
-            if(hours>0)
+            if(hours>0 && minutes>0)
             {
-                if(minutes == 0)
-                {
+                minutes--;
+                seconds = 59;
+            }
+            else if(hours>0 && minutes == 0)
+            {
                     hours--;
                     minutes = 59;
                     seconds = 59;
-                    lblHours.Text = hours.ToString();
-                    lblMinutes.Text = minutes.ToString();
-                    lblSeconds.Text = seconds.ToString();
-                }   
+                    lblHours.Text = String.Format("{0:00}", hours);
+                    lblMinutes.Text = String.Format("{0:00}", minutes);
+                    lblSeconds.Text = String.Format("{0:00}", seconds);   
             }
             else if (minutes > 0)
             {
                 minutes--;
                 seconds = 59;
-                lblMinutes.Text = minutes.ToString();
-                lblSeconds.Text = seconds.ToString();
+                lblMinutes.Text = String.Format("{0:00}", minutes);
+                lblSeconds.Text = String.Format("{0:00}", seconds);
             }
-            else if(hours ==0 && minutes == 0 && seconds ==0)
+            else if(hours == 0 && minutes == 0 && seconds == 0)
             {
                 timer.Stop();
             }
@@ -111,7 +107,10 @@ namespace Smart_Timer
 
         private void btnStop_Click(object sender, RoutedEventArgs e)
         {
-
+            timer.Stop();
+            hours = 0;
+            minutes = 0;
+            seconds = 0;
         }
 
         private void Grid_Tapped(object sender, TappedRoutedEventArgs e)

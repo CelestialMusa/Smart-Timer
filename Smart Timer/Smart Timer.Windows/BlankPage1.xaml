@@ -8,14 +8,14 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Set Hours :" VerticalAlignment="Top" FontSize="24" Margin="147,145,0,0"/>
-        <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Set Minutes :" VerticalAlignment="Top" FontSize="24" Margin="125,224,0,0"/>
-        <TextBlock x:Name="textBlock1_Copy1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Set Seconds : " VerticalAlignment="Top" FontSize="24" SelectionChanged="textBlock1_Copy1_SelectionChanged" Margin="122,309,0,0"/>
-        <Slider x:Name="sldHours" HorizontalAlignment="Left" Margin="290,138.5,0,0" VerticalAlignment="Top" Width="230" Height="46" Maximum="23" LargeChange="2"/>
-        <Slider x:Name="sldMinutes" HorizontalAlignment="Left" Margin="290,216.5,0,0" VerticalAlignment="Top" Width="230" Height="46" Maximum="59" LargeChange="5"/>
-        <Slider x:Name="sldSeconds" HorizontalAlignment="Left" Margin="290,301.5,0,0" VerticalAlignment="Top" Width="230" Height="46" LargeChange="5" Maximum="59"/>
-        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="262,392,0,0" VerticalAlignment="Top" FontSize="24" Height="51" Width="121" Click="btnSave_Click"/>
-        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="402,392,0,0" VerticalAlignment="Top" FontSize="24" Height="51" Width="121" Click="btnCancel_Click"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Set Hours :" VerticalAlignment="Top" FontSize="24" Margin="477,205,0,0"/>
+        <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Set Minutes :" VerticalAlignment="Top" FontSize="24" Margin="455,284,0,0"/>
+        <TextBlock x:Name="textBlock1_Copy1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Set Seconds : " VerticalAlignment="Top" FontSize="24" SelectionChanged="textBlock1_Copy1_SelectionChanged" Margin="452,369,0,0"/>
+        <Slider x:Name="sldHours" HorizontalAlignment="Left" Margin="620,199,0,0" VerticalAlignment="Top" Width="415" Height="46" Maximum="23" LargeChange="2"/>
+        <Slider x:Name="sldMinutes" HorizontalAlignment="Left" Margin="620,277,0,0" VerticalAlignment="Top" Width="415" Height="46" Maximum="59" LargeChange="5"/>
+        <Slider x:Name="sldSeconds" HorizontalAlignment="Left" Margin="620,362,0,0" VerticalAlignment="Top" Width="415" Height="46" LargeChange="5" Maximum="59"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="592,452,0,0" VerticalAlignment="Top" FontSize="24" Height="51" Width="121" Click="btnSave_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="732,452,0,0" VerticalAlignment="Top" FontSize="24" Height="51" Width="121" Click="btnCancel_Click"/>
 
     </Grid>
 </Page>

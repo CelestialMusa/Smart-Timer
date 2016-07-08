@@ -33,16 +33,15 @@ namespace Smart_Timer
             
         }
 
-        private async void btnSave_Click(object sender, RoutedEventArgs e)
+        private  void btnSave_Click(object sender, RoutedEventArgs e)
         {
             newTimer.Hours = Convert.ToInt32(sldHours.Value);
             newTimer.Minutes = Convert.ToInt32(sldMinutes.Value);
             newTimer.Seconds = Convert.ToInt32(sldSeconds.Value);
 
-            MessageDialog dialog = new MessageDialog(newTimer.Hours.ToString());
-            await dialog.ShowAsync();
+            MainPage.setTime(newTimer);
 
-            //this.Frame.Navigate(typeof(MainPage));
+            this.Frame.Navigate(typeof(MainPage));
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

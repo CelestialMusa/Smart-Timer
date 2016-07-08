@@ -16,7 +16,7 @@
             <ColumnDefinition Width="890*"/>
         </Grid.ColumnDefinitions>
         <Grid x:Name="gridTimer" Grid.Column="2" HorizontalAlignment="Left" Height="331" Margin="273,126,0,0" VerticalAlignment="Top" Width="496" Tapped="Grid_Tapped" PointerEntered="Grid_PointerEntered" Grid.ColumnSpan="2">
-            <Button x:Name="btnStart" Content="Start " HorizontalAlignment="Left" Margin="7,193,0,0" VerticalAlignment="Top" Height="66" Width="132" Click="button_Click_1" FontSize="24"/>
+            <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="103,193,0,0" VerticalAlignment="Top" Height="66" Width="132" Click="button_Click_1" FontSize="24"/>
             <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="276,193,0,0" VerticalAlignment="Top" Height="66" Width="132" Click="btnStop_Click" FontSize="24"/>
             <TextBlock x:Name="lblHours" HorizontalAlignment="Left" Margin="106,57,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" FontSize="72" RenderTransformOrigin="0.308,0.478"/>
             <TextBlock x:Name="lblHours_Copy" HorizontalAlignment="Left" Margin="189,57,0,0" TextWrapping="Wrap" Text=":" VerticalAlignment="Top" FontSize="72" RenderTransformOrigin="0.308,0.478"/>
