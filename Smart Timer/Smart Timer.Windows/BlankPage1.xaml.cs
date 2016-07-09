@@ -14,6 +14,9 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Core;
 using Windows.UI.Popups;
+using Windows.Storage;
+using Windows.Storage.Pickers;
+
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -47,6 +50,29 @@ namespace Smart_Timer
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));
+        }
+
+        private async void btnFile_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var openFile = new FileOpenPicker();
+                openFile.SuggestedStartLocation = PickerLocationId.MusicLibrary;
+                openFile.FileTypeFilter.Add(".MP3");
+                openFile.FileTypeFilter.Add(".WMA");
+                openFile.FileTypeFilter.Add(".FLAC");
+                openFile.FileTypeFilter.Add(".MP3");
+
+                var file = await openFile.PickSingleFileAsync();
+                var stream = await file.OpenAsync(FileAccessMode.Read);
+
+                MainPage.mdPlayer.SetSource(stream, file.ContentType);
+                MainPage.mdPlayer.Pause();
+            }
+            catch(Exception)
+            {
+
+            }
         }
     }
 }

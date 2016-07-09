@@ -26,6 +26,8 @@ namespace Smart_Timer
         DispatcherTimer timer = new DispatcherTimer();
         static Timer new_timer;
 
+        public static MediaElement mdPlayer = new MediaElement();
+
         static int hours = 0;
         static int minutes = 0;
         static int seconds = 0;
@@ -64,7 +66,7 @@ namespace Smart_Timer
 
         private  void button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (btnStart.Content.ToString().Trim() == "Start" && !(hours ==0 && minutes == 0 && seconds == 0))
+            if (btnStart.Content.ToString().Trim() == "Start" && !(hours == 0 && minutes == 0 && seconds == 0))
             {
                 btnStart.Content = "Pause";
                 timer.Start();
@@ -102,6 +104,7 @@ namespace Smart_Timer
             else if(hours == 0 && minutes == 0 && seconds == 0)
             {
                 timer.Stop();
+                mdPlayer.Play();
             }
         }
 
@@ -111,6 +114,11 @@ namespace Smart_Timer
             hours = 0;
             minutes = 0;
             seconds = 0;
+
+            if (hours == 0 && minutes == 0 && seconds == 0)
+            {
+                mdPlayer.Stop();
+            }
         }
 
         private void Grid_Tapped(object sender, TappedRoutedEventArgs e)

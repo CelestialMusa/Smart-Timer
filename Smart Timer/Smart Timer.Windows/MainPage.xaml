@@ -15,16 +15,15 @@
             <ColumnDefinition Width="339*"/>
             <ColumnDefinition Width="890*"/>
         </Grid.ColumnDefinitions>
-        <Grid x:Name="gridTimer" Grid.Column="2" HorizontalAlignment="Left" Height="331" Margin="273,126,0,0" VerticalAlignment="Top" Width="496" Tapped="Grid_Tapped" PointerEntered="Grid_PointerEntered" Grid.ColumnSpan="2">
-            <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="103,193,0,0" VerticalAlignment="Top" Height="66" Width="132" Click="button_Click_1" FontSize="24"/>
-            <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="276,193,0,0" VerticalAlignment="Top" Height="66" Width="132" Click="btnStop_Click" FontSize="24"/>
+        <Grid x:Name="gridTimer" Grid.Column="2" HorizontalAlignment="Left" Height="331" Margin="277,134,0,0" VerticalAlignment="Top" Width="496" Tapped="Grid_Tapped" PointerEntered="Grid_PointerEntered" Grid.ColumnSpan="2">
+            <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="70,193,0,0" VerticalAlignment="Top" Height="66" Width="132" Click="button_Click_1" FontSize="24"/>
+            <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="243,193,0,0" VerticalAlignment="Top" Height="66" Width="182" Click="btnStop_Click" FontSize="24"/>
             <TextBlock x:Name="lblHours" HorizontalAlignment="Left" Margin="106,57,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" FontSize="72" RenderTransformOrigin="0.308,0.478"/>
             <TextBlock x:Name="lblHours_Copy" HorizontalAlignment="Left" Margin="189,57,0,0" TextWrapping="Wrap" Text=":" VerticalAlignment="Top" FontSize="72" RenderTransformOrigin="0.308,0.478"/>
             <TextBlock x:Name="lblMinutes" HorizontalAlignment="Left" Margin="216,57,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" FontSize="72" RenderTransformOrigin="0.308,0.478"/>
             <TextBlock x:Name="lblHours_Copy2" HorizontalAlignment="Left" Margin="299,57,0,0" TextWrapping="Wrap" Text=":" VerticalAlignment="Top" FontSize="72" RenderTransformOrigin="0.308,0.478"/>
             <TextBlock x:Name="lblSeconds" HorizontalAlignment="Left" Margin="320,57,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" FontSize="72" RenderTransformOrigin="0.308,0.478"/>
         </Grid>
-        <Button x:Name="btnAdd" Content="Add " Grid.Column="3" HorizontalAlignment="Left" Margin="594,610,0,0" VerticalAlignment="Top" Height="63" Width="138" FontSize="24" Click="btnAdd_Click"/>
-
+        <Button x:Name="btnAdd" Content="Settings" Grid.Column="3" HorizontalAlignment="Left" Margin="594,610,0,0" VerticalAlignment="Top" Height="63" Width="138" FontSize="24" Click="btnAdd_Click"/>
     </Grid>
 </Page>
